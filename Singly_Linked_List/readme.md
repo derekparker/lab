@@ -1,1 +1,1 @@
-Just some code that I am messing around with. Random implementations of Data Structurs and Algorithms.
+Rough implementation of a Singly Linked List in C++. Needs some cleanup and optimization.
