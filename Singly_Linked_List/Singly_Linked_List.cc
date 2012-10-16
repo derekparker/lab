@@ -9,7 +9,7 @@ SinglyLinkedList::SinglyLinkedList(){
 }
 
 void SinglyLinkedList::append(int data){
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = new Node;
     node->next = nullptr;
     node->data = data;
     
@@ -26,12 +26,10 @@ void SinglyLinkedList::append(int data){
 }
 
 int SinglyLinkedList::find(int data){
-	Node *current = (Node*)malloc(sizeof(Node));
-	current = first;
-	for (int i = 0; i < nodes; i++){
-		if (current->data == data){
-			return current->data;
+	Node *iter;
+	for (iter = first; iter->next != nullptr; iter = iter->next){
+		if (iter->data == data){
+			return iter->data;
 		}
-		current = current->next;
 	}
 }
