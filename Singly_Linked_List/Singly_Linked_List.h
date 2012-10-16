@@ -4,6 +4,7 @@
 class SinglyLinkedList {
 public:
     SinglyLinkedList();
+    ~SinglyLinkedList();
     int length(){ return nodes; }
     int find(int data);
     void append(int data);

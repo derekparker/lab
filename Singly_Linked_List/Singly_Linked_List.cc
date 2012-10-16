@@ -8,18 +8,26 @@ SinglyLinkedList::SinglyLinkedList(){
     nodes = 0;
 }
 
+SinglyLinkedList::~SinglyLinkedList(){
+	Node *del = first;
+	while (del){
+		Node *next = del->next;
+		delete del;
+		del = next;
+	}
+}
+
 void SinglyLinkedList::append(int data){
-    Node *node = new Node;
-    node->next = nullptr;
-    node->data = data;
-    
     if (first == nullptr && last == nullptr){
-        first = node;
-        last = node;
+        first = new Node;
+        first->data = data;
+        first->next = nullptr;
+        last = first;
     } else {
-        Node *oldtail = last;
-        oldtail->next = node;
-        last = node;
+        last->next = new Node;
+        last->next->data = data;
+        last->next->next = nullptr;
+        last = last->next;
     }
     
     ++nodes;
