@@ -6,7 +6,7 @@ import (
 
 func main() {
 	println("hai")
-	conc.IsReady("Coffee", 6)
-	conc.IsReady("Tea", 2)
+	go conc.IsReady("Coffee", 6)
+	go conc.IsReady("Tea", 2)
 	println("Over")
 }
