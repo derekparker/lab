@@ -35,9 +35,8 @@ int main(int argc, const char **argv) {
   int upper = atoi(argv[1]) - 1;
 
   int arr[upper];
-  for(int i = 0; i < upper; i++) {
+  for(int i = 0; i < upper; i++)
     arr[i] = rand();
-  }
 
   shellsort(arr, upper);
 
