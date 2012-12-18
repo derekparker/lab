@@ -8,7 +8,7 @@ def shellsort(arr)
     inc.upto(arr.size-1) do |i|
       j = i
       tmp = arr[i]
-      while j >= inc && arr[j - inc] > tmp
+      while j >= inc && less?(tmp, arr[j - inc])
         arr[j] = arr[j - inc]
         j -= inc
       end
